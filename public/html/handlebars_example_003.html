@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>if</title>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+</head>
+<body>
+<div id="dataContent">
+
+</div>
+<script id="dataTemplate" type="text/x-handlebars-template">
+  <ul>
+    {{#each this}}
+    {{#if name}}
+    <li>{{name}}, {{sex}}, {{age}}, 朋友：{{friend}}</li>
+    {{else}}
+    <li>朋友：{{friend}}</li>
+    {{/if}}
+    {{/each}}
+  </ul>
+</script>
+<script type="text/javascript">
+
+  var data = {
+    student: [
+      {
+        "sex": 0,
+        "age": 18,
+        "friend": ["李四", "王二", "张三"]
+      },
+      {
+        "sex": 1,
+        "age": 28,
+        "friend": ["李四", "王二"]
+      },
+      {
+        "name": "王二",
+        "sex": 0,
+        "age": 38,
+        "friend": ["李四", "王二"]
+      }
+    ]
+  };
+
+  //取得模板函数
+  var template = Handlebars.compile($("#dataTemplate").html());
+  //给模板注入数据
+  $('#dataContent').html(template(data.student));
+
+</script>
+</body>
+</html>

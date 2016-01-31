@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>if</title>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+</head>
+<body>
+<div id="dataContent">
+
+</div>
+<script id="dataTemplate" type="text/x-handlebars-template">
+  {{#gt this.age 22}}
+  <p>HELLO WORLD</p>
+  {{else}}
+  <p>AHAHAHAHAHA</p>
+  {{/gt}}
+
+  {{#gt this.age 24}}
+  <p>HELLO WANGLEI</p>
+  {{else}}
+  <p>WOWOWWOWOW</p>
+  {{/gt}}
+</script>
+<script type="text/javascript">
+
+  var data = {
+    age: 23
+  };
+
+  Handlebars.registerHelper('gt', function (a, b, options) {
+    if (a > b) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  });
+  Handlebars.registerHelper('gte', function (a, b, options) {
+    if (a >= b) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  });
+  Handlebars.registerHelper('lt', function (a, b, options) {
+    if (a < b) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  });
+  Handlebars.registerHelper('lte', function (a, b, options) {
+    if (a <= b) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  });
+  Handlebars.registerHelper('eq', function (a, b, options) {
+    if (a === b) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  });
+
+  //取得模板函数
+  var template = Handlebars.compile($("#dataTemplate").html());
+  //给模板注入数据
+  $('#dataContent').html(template(data));
+
+</script>
+</body>
+</html>

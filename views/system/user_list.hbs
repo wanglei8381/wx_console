@@ -1,0 +1,47 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-md-7">
+        <h4>用户列表</h4>
+      </div>
+      <div class="col-xs-2">
+        <input class="form-control" placeholder="姓名" type="text" id="loginname"/>
+      </div>
+      <div class="col-xs-1">
+        <button type="button" class="btn btn-default" onclick="search();"><i class="fa fa-search"></i> 查询
+        </button>
+      </div>
+      <div class="col-xs-2">
+        <a class="btn btn-default purple" href="javascript:add();"><i class="fa fa-plus"></i> 添加</a>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table id="datatable" class="table table-bordered table-responsive "
+             style="margin-bottom: 0px !important;border-bottom: none!important">
+      </table>
+    </div>
+  </div>
+</div>
+<!-- 添加模板 -->
+<script id="dataTemplate" type="text/template">
+  <div class="panel-body">
+    <form class="form-horizontal" id="dataForm">
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">用户姓名 : </label>
+        <div class="col-sm-7 u-word">
+          <input class="form-control" placeholder="用户姓名" type="text" name="loginname"/>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</script>
+
+{{#extend "scripts"}}
+  <script>
+    console.log('HELLO WORLD');
+  </script>
+{{/extend}}

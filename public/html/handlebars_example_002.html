@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>循环--自定义循环</title>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+</head>
+<body>
+<div id="dataContent">
+
+</div>
+<script id="dataTemplate" type="text/x-handlebars-template">
+  <ul>
+    {{#list this}}
+    <li>{{name}}, {{sex}}, {{age}}, 朋友：{{friend}}</li>
+    {{/list}}
+  </ul>
+</script>
+<script type="text/javascript">
+
+  var data = {
+    student: [
+      {
+        "name": "张三",
+        "sex": 0,
+        "age": 18,
+        "friend": ["李四", "王二", "张三"]
+      },
+      {
+        "name": "李四",
+        "sex": 1,
+        "age": 28,
+        "friend": ["李四", "王二"]
+      },
+      {
+        "name": "王二",
+        "sex": 0,
+        "age": 38,
+        "friend": ["李四", "王二"]
+      }
+    ]
+  };
+
+
+  //帮助函数，帮助函数要写在最前面
+  Handlebars.registerHelper("list", function (context, options) {
+    var ret = "", data, i = 0;
+    if (options.data) {
+      data = Handlebars.createFrame(options.data);
+    }
+
+    for (var j = context.length; i < j; i++) {
+      if (i > j / 2) {
+        break;
+      }
+      if (data) {
+        data.index = i;
+      }
+
+      ret += options.fn(context[i], {data: data});
+    }
+
+    return ret;
+  });
+
+  //取得模板函数
+  var template = Handlebars.compile($("#dataTemplate").html());
+  //给模板注入数据
+  $('#dataContent').html(template(data.student));
+
+</script>
+</body>
+</html>

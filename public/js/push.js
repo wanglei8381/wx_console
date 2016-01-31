@@ -1,0 +1,1 @@
+var baiduSiteReg=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,pageUrl=window.location.href;if(!baiduSiteReg.test(pageUrl)){var url="//api.share.baidu.com/s.gif?r="+encodeURIComponent(document.referrer),img=new Image;img.src=url}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>循环--each循环</title>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+</head>
+<body>
+<div id="dataContent">
+
+</div>
+<script id="dataTemplate" type="text/x-handlebars-template">
+  <ul>
+    {{#each this}}
+    <li>{{name}}, {{sex sex}}, {{age}}, 朋友：{{friend}}</li>
+    {{/each}}
+  </ul>
+</script>
+<script id="dataTemplate2" type="text/x-handlebars-template">
+  <ul>
+    {{#each student}}
+    <li>{{name}}, {{sex sex}}, {{age}},朋友：
+      {{#each friend}}
+      {{this}},{{../friend.length}}
+      {{/each}}
+    </li>
+    {{/each}}
+  </ul>
+</script>
+<script type="text/javascript">
+
+  var data = {
+    student: [
+      {
+        "name": "张三",
+        "sex": 0,
+        "age": 18,
+        "friend": ["李四", "王二", "张三"]
+      },
+      {
+        "name": "李四",
+        "sex": 1,
+        "age": 28,
+        "friend": ["李四", "王二"]
+      },
+      {
+        "name": "王二",
+        "sex": 0,
+        "age": 38,
+        "friend": ["李四", "王二"]
+      }
+    ]
+  };
+
+
+  //帮助函数，帮助函数要写在最前面
+  Handlebars.registerHelper("sex", function (sex) {
+    if (sex === 0) {
+      return '女';
+    } else {
+      return '男';
+    }
+  });
+
+  //取得模板函数
+  var template = Handlebars.compile($("#dataTemplate").html());
+  //给模板注入数据
+  $('#dataContent').html(template(data.student));
+
+  //第二种方式
+  template = Handlebars.compile($("#dataTemplate2").html());
+  $('#dataContent').append(template(data));
+
+</script>
+</body>
+</html>

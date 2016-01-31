@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <!--头部静态文件-->
+  {{> head_static}}
+
+  <link href="/css/classify.min.css" rel="stylesheet" type="text/css">
+</head>
+<body id="body"
+      style="margin-top: 60px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+<!--头部-->
+{{> header}}
+
+<div id="main">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="swiper-container swiper-container-horizontal">
+          <div class="swiper-wrapper" style="text-align: center">
+
+            <div class="swiper-slide swiper-slide-active"
+                 style="width: 1140px; background-image: url(http://www.veuts.com/huodong/page/mall/classify/%E9%A1%B6%E9%83%A8%E6%BB%91%E5%9D%97/CJY1140%20608.png);">
+            </div>
+
+            <div class="swiper-slide swiper-slide-next"
+                 style="width: 1140px; background-image: url(http://www.veuts.com/huodong/page/mall/classify/%E9%A1%B6%E9%83%A8%E6%BB%91%E5%9D%97/CJY1140-608-2.png);">
+            </div>
+
+            <div class="swiper-slide"
+                 style="width: 1140px; background-image: url(http://www.veuts.com/huodong/page/mall/classify/%E9%A1%B6%E9%83%A8%E6%BB%91%E5%9D%97/CJY1140-608-3.png);">
+            </div>
+
+            <div class="swiper-slide"
+                 style="width: 1140px; background-image: url(http://www.veuts.com/huodong/page/mall/classify/%E9%A1%B6%E9%83%A8%E6%BB%91%E5%9D%97/CJY1140-608-4.png);">
+            </div>
+
+          </div>
+          <div class="swiper-button-next swiper-button-white">
+          </div>
+          <div class="swiper-button-prev swiper-button-white swiper-button-disabled">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 xs-hide">
+        <div style="height: 40px; line-height: 40px; background-color: Black; width: 100%;
+                    color: White">
+          　
+          <svg style="stroke: white; width: 20px; height: 100%; vertical-align: middle">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fav"></use>
+          </svg>
+          　
+          <a href="http://www.veuts.com/Account/myFav.aspx" id="MainContent_aMyFav" style="color: White">愿望清单</a>　
+          <span id="MainContent_lblFavQty">0</span>
+        </div>
+        <div style="height: 40px; line-height: 40px; background-color: Black; width: 100%;
+                    color: White;">
+          　
+          <svg style="stroke: white; width: 20px; height: 100%; vertical-align: middle">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart"></use>
+          </svg>
+          　
+          <a href="http://www.veuts.com/page/mall/cart.aspx" style="color: White">购物车</a>　　
+          <span id="MainContent_lblCartQty">0</span>
+        </div>
+      </div>
+      <div class="col-lg-8" style="height: 80px; line-height: 80px; text-align: center;
+                font-family: Imprint MT Shadow; font-size: 24pt">
+        NEW ARRIVAL
+      </div>
+      <div class="col-lg-2 ico" style="text-align: right;">
+        <!--<img src="../../images/page/mall/classify/ico.png" />-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr style="height: 1px; border: none; border-top: 1px solid #CCCCCC; margin-bottom: 5px">
+      </div>
+    </div>
+    <div class="row sort-menu">
+      <div class="col-md-12">
+        <nav class="navbar" style="margin-bottom: 0px">
+          <ul class="nav navbar-nav">
+            <!--<li><a href="###">NEW ARRIVAL</a></li>-->
+            <li><a href="./选款定制_files/选款定制.html" class="selected">所有商品</a></li>
+            <!--<li><a href="###">新进补货</a></li>-->
+            <li><a href="http://www.veuts.com/page/mall/classify.aspx?o=1" class=""><span
+                                              class="glyphicon glyphicon-arrow-down"></span>人气最高</a></li>
+            <li><a href="http://www.veuts.com/page/mall/classify.aspx?o=2" class=""><span
+                                              class="glyphicon glyphicon-arrow-down"></span>价格</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <div class="my-style"><a href="javascript:void(0)" class="go-discovery">上传我想要的款式</a></div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="row sort-menu-small">
+      <div class="col-md-12">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+            排序 <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <!--<li><a href="#">NEW ARRIVAL</a></li>-->
+            <!--<li role="separator" class="divider"></li>-->
+            <li><a href="./选款定制_files/选款定制.html" class="selected">所有商品</a></li>
+            <!--<li><a href="#">新进补货</a></li>-->
+            <li><a href="http://www.veuts.com/page/mall/classify.aspx?o=1" class=""><span
+                                              class="glyphicon glyphicon-arrow-down">
+                        </span>人气最高</a></li>
+            <li><a href="http://www.veuts.com/page/mall/classify.aspx?o=2" class=""><span
+                                              class="glyphicon glyphicon-arrow-down">
+                        </span>价格</a></li>
+          </ul>
+        </div>
+        <button type="button" class="btn btn-default go-discovery" style="float: right">
+          上传我想要的款式
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr style="height: 1px; border: none; border-top: 1px solid #CCCCCC; margin-top: 5px">
+      </div>
+    </div>
+    <div class="row product">
+      {{#each goods}}
+
+        <div class="col-xs-12 col-md-4">
+          <div class="panel">
+            <div class="panel-body">
+              <div class="product-view">
+                <a href="{{link}}">
+                  <img src="{{url}}" class="img-responsive center-block lazy"
+                       style="opacity: 1;"></a>
+
+                <div class="left" productid="87" productpiccolorid="119">
+                  <a href="javascript:void(0)">
+                    <svg style="stroke: white; width: 20px; height: 100%; vertical-align: middle; margin-left: -2px">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart"></use>
+                    </svg>
+                  </a>加入购物车
+                </div>
+                <div class="right" productid="87">
+                  <a href="http://www.veuts.com/page/mall/classify.aspx###" class="">
+                    <svg style="stroke: white; width: 20px; height: 100%; vertical-align: middle; margin-left: -2px">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fav"></use>
+                    </svg>
+                  </a>加入愿望清单
+                </div>
+              </div>
+              <br>
+
+              <div class="product-name">
+                <a href="http://www.veuts.com/page/mall/pdetail.aspx?id=87">
+                  {{name}}</a></div>
+              <div class="new-tag">
+                <a href="http://www.veuts.com/page/mall/pdetail.aspx?id=87">{{brand}}</a></div>
+              <div class="product-price">
+                <a href="http://www.veuts.com/page/mall/pdetail.aspx?id=87">
+                  热销{{sales}}件</a></div>
+              <br>
+
+              <div class="product-footer">
+                <div>
+                  <li></li>
+                </div>
+                <a href="http://www.veuts.com/page/mall/pdetail.aspx?id=87">
+                  ￥{{price}}</a>
+
+                <div>
+                  <li></li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {{/each}}
+      <div class="hidden"></div>
+
+    </div>
+    <div class="row">
+      <span id="MainContent_lblPageCount" class="hidden">1</span>
+      <span id="MainContent_lblPageIndex" class="hidden">0</span>
+      <nav style="text-align: center">
+        <ul class="pagination" page-action="classify.aspx?o=&amp;p=%1&amp;ss=">
+          <li class="page-prev disabled">
+            <a href="javascript:void(0)" aria-label="Previous">
+              <span aria-hidden="true">«</span>
+            </a>
+          </li>
+
+          <li class="page-goto selected" id="goto_page_1"><a href="classify.aspx?o=&amp;p=1&amp;ss=">1</a></li>
+          <li class="page-next disabled">
+            <a href="javascript:void(0)" aria-label="Next">
+              <span aria-hidden="true">»</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</div>
+
+<!--尾部-->
+{{> footer}}
+
+<!--尾部静态文件-->
+{{> foot_static}}
+
+
+<script src="/js/classify.min.js" type="text/javascript"></script>
+</body>
+</html>

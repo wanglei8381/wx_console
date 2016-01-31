@@ -1,0 +1,1 @@
+exports.wx = require('./wx');
